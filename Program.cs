@@ -44,3 +44,34 @@ double Bz = double.Parse(Console.ReadLine());
 double result = Math.Sqrt(Math.Pow((Ax-Bx),2)+ Math.Pow((Ay-By),2)+ Math.Pow((Az-Bz),2));
 
 Console.WriteLine("Расстояние между точкой А и точкой B равно  " + Math.Round(result,2));
+
+
+
+//Задача 3
+
+Console.WriteLine("Для получения таблицы введите число отличное от 1: ");
+double number = double.Parse(Console.ReadLine());
+while (number < 1)
+{
+    if (number == 0)
+    {
+        Console.WriteLine("Для 0 нет таблицы кубов от 1");
+    }
+    else
+    {
+        Console.WriteLine("Введено отрицательное число, таблицы кубов не существует");
+        number = Math.Abs(number);
+        Console.Write("Возможно вы хотели ввести это число  " + number + "Тогда для этого числа будет таблица кубов");
+        for (int i = 1; i <= number; i++)
+        {
+            Console.Write(Math.Pow(i, 3)+ "; ");
+        }
+    }
+    Console.WriteLine("Для получение таблицы введите число больше 1: ");
+    number = double.Parse(Console.ReadLine());
+}
+Console.Write("Ответ: таблица кубов для" + number + "->>  ");
+for (int i = 1; i <= number; i++)
+{
+    Console.Write(Math.Pow(i, 3) + ";");
+}
